@@ -35,10 +35,10 @@ Ingrese el número de la opción:
       break;
     case "5":
       continuar = false;
-      alert("👋 Gracias por usar el simulador.");
+      alert(" Gracias por usar el simulador.");
       break;
     default:
-      alert("⚠️ Opción inválida. Intente de nuevo.");
+      alert("Opción inválida. Intente de nuevo.");
   }
 }
 
@@ -46,7 +46,7 @@ Ingrese el número de la opción:
 
 function registrarGasto() {
   let monto = parseFloat(prompt("Ingrese el monto del gasto:"));
-  if (isNaN(monto)) {
+  if (monto) {
     alert("Monto inválido.");
     return;
   }
