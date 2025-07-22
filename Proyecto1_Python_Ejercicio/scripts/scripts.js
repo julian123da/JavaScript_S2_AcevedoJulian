@@ -1,67 +1,87 @@
 // ###############################################
-// #### Proyecto1_Python_Ejercicio #######
+// #### Proyecto1_Python_Ejercicio ###############
 // ###############################################
 
-booleanito= true
-while(booleanito==true)
-    let eleccion = prompt(`=============================================`)
+let gastos = [];
+let continuar = true;
+
+while (continuar) {
+  let eleccion = prompt(`
 =============================================
-Simulador de Gasto Diario
+   Simulador de Gasto Diario
 =============================================
 Seleccione una opción:
-
 1. Registrar nuevo gasto
 2. Listar gastos
 3. Calcular total de gastos
 4. Generar reporte de gastos
 5. Salir
-=============================================`))
-    if (eleccion === 1)  {
-        let montoGasto = prompt(`======================================================`)
-    Registrar Nuevo Gasto
-============================================================
-Ingrese la información del gasto:
+=============================================
+Ingrese el número de la opción:
+`);
 
-Monto del gasto:
-========================================
-       let categoria = prompt (`===============================================`)
-       Registrar Nuevo Gasto 
-==============================================
-Ingrese la información del gasto:
-
-Categoria (ej. comida, WebTransportError, entretenimiento, otros):
-          let descripcion = prompt(`=====================================`)
-Registrar Nuevo Gasto 
-===================================
-Ingresa la informacion del gasto:
-
-descripcion:
-(`===========================================`)
-            let guardar = prompt(`Ingrese 'S' para guardar o 'C' para cancelar.`)
-            if (guardar ==="s")  {
-                let gastoNuevo={
-                    montoGasto: montoGasto,
-                    categoria: categoria,
-                    descripcion: descripcion;
-                
-                }
-                gasto.Push(gastonuevo);
-                alert(gasto.toString);
-            }else if (guardar === "c"){
-                alert("Gasto no guardado);
-                continue;  
-            }else {
-                alert("Ingresa una opcion valida"); 
-            };
-
-        };
-    
-    
- }
-        
-            
+  switch (eleccion) {
+    case "1":
+      registrarGasto();
+      break;
+    case "2":
+      listarGastos();
+      break;
+    case "3":
+      calcularTotal();
+      break;
+    case "4":
+      generarReporte();
+      break;
+    case "5":
+      continuar = false;
+      alert("👋 Gracias por usar el simulador.");
+      break;
+    default:
+      alert("⚠️ Opción inválida. Intente de nuevo.");
+  }
+}
 
 
+
+function registrarGasto() {
+  let monto = parseFloat(prompt("Ingrese el monto del gasto:"));
+  if (isNaN(monto)) {
+    alert("Monto inválido.");
+    return;
+  }
+
+  let categoria = prompt("Ingrese la categoría (comida, transporte, etc):");
+  let descripcion = prompt("Descripción (opcional):");
+  let confirmacion = prompt("Ingrese 'S' para guardar o 'C' para cancelar.").toUpperCase();
+
+  if (confirmacion === "S") {
+    const nuevoGasto = {
+      fecha: new Date().toLocaleDateString(),
+      monto: monto,
+      categoria: categoria,
+      descripcion: descripcion
+    };
+    gastos.push(nuevoGasto);
+    alert(" Gasto guardado correctamente.");
+  } else {
+    alert("gasto no guardado.");
+  }
+}
+
+function listarGastos() {
+  if (gastos.length === 0) {
+    alert(" No hay gastos registrados.");
+    return;
+  }
+
+  let lista = "Lista de Gastos:\n\n";
+  gastos.forEach((gasto, index) => {
+    lista += `${index + 1}. [${gasto.fecha}] $${gasto.monto} - ${gasto.categoria} (${gasto.descripcion})\n`;
+  });
+
+  alert(lista);
+}
 
 
 
