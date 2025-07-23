@@ -1,6 +1,3 @@
-let Consultar = [];
-let continuar = true;
-
 while (Hamburguesas) {
     let = eleccion = prompt (`
     =============================================
@@ -140,7 +137,7 @@ let JSONChefs
 function Añadir() {
     let = ingredientes(prompt("Ingresa el ingrediente que quieras utilizar"));
     if (ingredientes) 
-    alert("Ingrediente invalidos.")
+    alert("Ingredientes invalidos.")
 return; 
  }
 
@@ -151,3 +148,5 @@ if (confirmacion === "S"){
 
 }
 
+
+// Desarrollado por Julian David Acevedo Gómez T.I: 1.097.100.290
