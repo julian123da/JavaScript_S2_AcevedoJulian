@@ -144,4 +144,10 @@ function Añadir() {
 return; 
  }
 
-    
+ let categoria = prompt("Ingresa la categoria (Ingredientes, Categorias, Hamburguesas, Chefs:")
+ let confirmacion = prompt("Ingrese 'S' para guardar o 'C' para cancelar.")
+
+if (confirmacion === "S"){
+
+}
+
