@@ -1,5 +1,61 @@
-let Hamburguesería  = [];
+let Consultar = [];
 let continuar = true;
+
+while (Hamburguesas) {
+    let = eleccion = prompt (`
+    =============================================
+       Simulador de la Hamburgueseria 
+    =============================================
+  Seleccione una opción:
+
+    1. Añadir
+    2. Listar 
+    3. Eliminar
+    4. Actualizar
+    5. Consultar
+    6. Salir
+    ===========================================`);
+
+};
+
+if (seleccioneCategoria == 2) {
+    let = especificar = prompt (`
+    =============================================
+       Añadir
+    =============================================
+  Ingrese una opción para continuar:
+
+    1.Ingrediente
+    2.Categoria
+    3.Hamburguesa
+    4.Chef
+    5.Regresar
+    ===========================================`);
+
+}switch (eleccion) {
+    case "1":
+      Añadir();
+      break;
+    case "2":
+      Listar();
+      break;
+    case "3":
+      Eliminar();
+      break;
+    case "4":
+      Actualizar();
+      break;
+    case "5":
+        Consultar();
+        break
+    case "6":
+        Salir();
+        break
+      continuar = true;
+      alert("Gracias por usar el Simulador de la Hamburgueseria.");
+      break;
+      alert("Opción inválida. Intente de nuevo.");
+}
 
 let JSONIngredientes 
 [
@@ -81,13 +137,11 @@ let JSONChefs
     }
 ]
 
-while (Hamburguesas == true) {
-    let 
+function Añadir() {
+    let = ingredientes(prompt("Ingresa el ingrediente que quieras utilizar"));
+    if (ingredientes) 
+    alert("Ingrediente invalidos.")
+return; 
+ }
 
-}
-
-
-encontrar
-agregar
-actualizar
-leer
+    
