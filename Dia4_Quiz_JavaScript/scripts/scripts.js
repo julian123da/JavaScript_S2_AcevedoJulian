@@ -108,6 +108,34 @@ let ingredientes = [
       console.log(`Ingrediente "${nombre}" no encontrado.`);
     }
   }
+
+  function agregarHamburguesa(nombre, categoria, ingredientesLista, precio, chef) {
+    hamburguesas.push({ nombre, categoria, ingredientes: ingredientesLista, precio, chef });
+    console.log(` Hamburguesa "${nombre}" agregada.`);
+  }
+  
+  function listarHamburguesas() {
+    console.log(" Hamburguesas:");
+    hamburguesas.forEach((h, index) => {
+      console.log(`${index + 1}. ${h.nombre} (${h.categoria}) - $${h.precio} | Chef: ${h.chef}`);
+      console.log(`   Ingredientes: ${h.ingredientes.join(", ")}`);
+    });
+  }
+  
+  function listarCategorias() {
+    console.log(" Categorías:");
+    categorias.forEach((c, index) => {
+      console.log(`${index + 1}. ${c.nombre} - ${c.descripcion}`);
+    });
+  }
+  
+  function listarChefs() {
+    console.log(" Chefs:");
+    chefs.forEach((c, index) => {
+      console.log(`${index + 1}. ${c.nombre} - Especialidad: ${c.especialidad}`);
+    });
+  }
+  
   
 
 
