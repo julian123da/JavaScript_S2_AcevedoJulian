@@ -35,7 +35,7 @@ Ingrese el número de la opción:
       break;
     case "5":
       continuar = false;
-      alert("👋 Gracias por usar el simulador.");
+      alert(" Gracias por usar el simulador.");
       break;
     default:
       alert("⚠️ Opción inválida. Intente de nuevo.");
@@ -70,7 +70,7 @@ function registrarGasto() {
 
 function listarGastos() {
   if (gastos.length === 0) {
-    alert("📭 No hay gastos registrados.");
+    alert(" No hay gastos registrados.");
     return;
   }
 
@@ -103,7 +103,7 @@ function generarReporte() {
 
   gastos.forEach(gasto => {
     total += gasto.monto;
-    if (!resumen[gasto.categoria]) {
+    if (resumen[gasto.categoria]) {
       resumen[gasto.categoria] = gasto.monto;
     } else {
       resumen[gasto.categoria] += gasto.monto;

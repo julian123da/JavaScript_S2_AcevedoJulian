@@ -93,7 +93,7 @@ let ingredientes = [
   function buscarIngrediente(nombre) {
     const ing = ingredientes.find(i => i.nombre.toLowerCase() === nombre.toLowerCase());
     if (ing) {
-      console.log(" Ingrediente encontrado:", ing);
+      console.log(" Ingrediente encontrado:");
     } else {
       console.log(`Ingrediente "${nombre}" no encontrado.`);
     }
