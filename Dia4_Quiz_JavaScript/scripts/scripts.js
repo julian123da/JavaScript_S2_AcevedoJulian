@@ -78,5 +78,38 @@ let ingredientes = [
     }
   ];
 
+  function agregarIngrediente(nombre, descripcion, precio, stock) {
+    ingredientes.push({ nombre, descripcion, precio, stock });
+    console.log(`Ingrediente "${nombre}" agregado.`);
+  }
+  
+  function listarIngredientes() {
+    console.log(" Ingredientes:");
+    ingredientes.forEach((i, index) => {
+      console.log(`${index + 1}. ${i.nombre} - ${i.descripcion} | $${i.precio} | Stock: ${i.stock}`);
+    });
+  }
+  
+  function buscarIngrediente(nombre) {
+    const ing = ingredientes.find(i => i.nombre.toLowerCase() === nombre.toLowerCase());
+    if (ing) {
+      console.log(" Ingrediente encontrado:", ing);
+    } else {
+      console.log(`Ingrediente "${nombre}" no encontrado.`);
+    }
+  }
+  
+  function actualizarStockIngrediente(nombre, nuevoStock) {
+    const ing = ingredientes.find(i => i.nombre.toLowerCase() === nombre.toLowerCase());
+    if (ing) {
+      ing.stock = nuevoStock;
+      console.log(` Stock actualizado para "${nombre}": ${nuevoStock}`);
+    } else {
+      console.log(`Ingrediente "${nombre}" no encontrado.`);
+    }
+  }
+  
+
+
   
   
