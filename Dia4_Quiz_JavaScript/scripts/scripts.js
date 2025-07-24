@@ -118,7 +118,7 @@ let ingredientes = [
     console.log(" Hamburguesas:");
     hamburguesas.forEach((h, index) => {
       console.log(`${index + 1}. ${h.nombre} (${h.categoria}) - $${h.precio} | Chef: ${h.chef}`);
-      console.log(`   Ingredientes: ${h.ingredientes.join(", ")}`);
+      console.log(`   Ingredientes: ${h.ingredientes.join()}`);
     });
   }
   
