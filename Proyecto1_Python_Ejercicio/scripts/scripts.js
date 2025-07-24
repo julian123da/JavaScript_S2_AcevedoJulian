@@ -35,18 +35,17 @@ Ingrese el número de la opción:
       break;
     case "5":
       continuar = false;
-      alert(" Gracias por usar el simulador.");
+      alert("👋 Gracias por usar el simulador.");
       break;
     default:
-      alert("Opción inválida. Intente de nuevo.");
+      alert("⚠️ Opción inválida. Intente de nuevo.");
   }
 }
 
 
-
 function registrarGasto() {
   let monto = parseFloat(prompt("Ingrese el monto del gasto:"));
-  if (monto) {
+  if (isNaN(monto)) {
     alert("Monto inválido.");
     return;
   }
@@ -65,13 +64,13 @@ function registrarGasto() {
     gastos.push(nuevoGasto);
     alert(" Gasto guardado correctamente.");
   } else {
-    alert("gasto no guardado.");
+    alert("Gasto no guardado.");
   }
 }
 
 function listarGastos() {
   if (gastos.length === 0) {
-    alert(" No hay gastos registrados.");
+    alert("📭 No hay gastos registrados.");
     return;
   }
 
@@ -83,7 +82,41 @@ function listarGastos() {
   alert(lista);
 }
 
+function calcularTotal() {
+  if (gastos.length === 0) {
+    alert(" No hay gastos para calcular.");
+    return;
+  }
 
+  let total = gastos.reduce((suma, gasto) => suma + gasto.monto, 0);
+  alert(` Total de gastos: $${total.toFixed(2)}`);
+}
+
+function generarReporte() {
+  if (gastos.length === 0) {
+    alert(" No hay gastos para generar reporte.");
+    return;
+  }
+
+  let resumen = {};
+  let total = 0;
+
+  gastos.forEach(gasto => {
+    total += gasto.monto;
+    if (!resumen[gasto.categoria]) {
+      resumen[gasto.categoria] = gasto.monto;
+    } else {
+      resumen[gasto.categoria] += gasto.monto;
+    }
+  });
+
+  let reporte = ` Reporte de Gastos\n\nTotal: $${total.toFixed(2)}\n`;
+  for (let categoria in resumen) {
+    reporte += `- ${categoria}: $${resumen[categoria].toFixed(2)}\n`;
+  }
+
+  alert(reporte);
+}
 
 
 // Desarrollado por Julian David Acevedo Gómez T.I: 1.097.100.290

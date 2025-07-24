@@ -1,152 +1,82 @@
-while (Hamburguesas) {
-    let = eleccion = prompt (`
-    =============================================
-       Simulador de la Hamburgueseria 
-    =============================================
-  Seleccione una opción:
+// ###############################################
+// #### Quiz ###############
+// ###############################################
 
-    1. Añadir
-    2. Listar 
-    3. Eliminar
-    4. Actualizar
-    5. Consultar
-    6. Salir
-    ===========================================`);
 
-};
-
-if (seleccioneCategoria == 2) {
-    let = especificar = prompt (`
-    =============================================
-       Añadir
-    =============================================
-  Ingrese una opción para continuar:
-
-    1.Ingrediente
-    2.Categoria
-    3.Hamburguesa
-    4.Chef
-    5.Regresar
-    ===========================================`);
-
-}switch (eleccion) {
-    case "1":
-      Añadir();
-      break;
-    case "2":
-      Listar();
-      break;
-    case "3":
-      Eliminar();
-      break;
-    case "4":
-      Actualizar();
-      break;
-    case "5":
-        Consultar();
-        break
-    case "6":
-        Salir();
-        break
-      continuar = true;
-      alert("Gracias por usar el Simulador de la Hamburgueseria.");
-      break;
-      alert("Opción inválida. Intente de nuevo.");
-}
-
-let JSONIngredientes 
-[
+let ingredientes = [
     {
-        "nombre": "Pan",
-        "descripcion": "Pan de hamburguesa clásico",
-        "precio": 2.5,
-        "stock": 500
+      nombre: "Pan",
+      descripcion: "Pan de hamburguesa clásico",
+      precio: 2.5,
+      stock: 500
     },
     {
-        "nombre": "Carne de res",
-        "descripcion": "Carne de res jugosa y sabrosa",
-        "precio": 8,
-        "stock": 300
+      nombre: "Carne de res",
+      descripcion: "Carne de res jugosa y sabrosa",
+      precio: 8,
+      stock: 300
     },
     {
-        "nombre": "Queso cheddar",
-        "descripcion": "Queso cheddar derretido",
-        "precio": 1.5,
-        "stock": 200
+      nombre: "Queso cheddar",
+      descripcion: "Queso cheddar derretido",
+      precio: 1.5,
+      stock: 200
     }
-]
-
-let JSONCategorías
-
-[
+  ];
+  
+  let categorias = [
     {
-        "nombre": "Clásica",
-        "descripcion": "Hamburguesas clásicas y sabrosas"
+      nombre: "Clásica",
+      descripcion: "Hamburguesas clásicas y sabrosas"
     },
     {
-        "nombre": "Vegetariana",
-        "descripcion": "Hamburguesas sin carne, perfectas para vegetarianos"
+      nombre: "Vegetariana",
+      descripcion: "Hamburguesas sin carne, perfectas para vegetarianos"
     },
     {
-        "nombre": "Gourmet",
-        "descripcion": "Hamburguesas gourmet con ingredientes premium"
+      nombre: "Gourmet",
+      descripcion: "Hamburguesas gourmet con ingredientes premium"
     }
-]
-
-let JSONHamburguesas
-[
+  ];
+  
+  let chefs = [
     {
-        "nombre": "Clásica",
-        "categoria": "Clásica",
-        "ingredientes": ["Pan", "Carne de res", "Queso cheddar", "Lechuga", "Tomate", "Cebolla", "Mayonesa", "Ketchup"],
-        "precio": 10,
-        "chef": "ChefA"
+      nombre: "ChefA",
+      especialidad: "Carnes"
     },
     {
-        "nombre": "Vegetariana",
-        "categoria": "Vegetariana",
-        "ingredientes": ["Pan integral", "Hamburguesa de lentejas", "Queso suizo", "Espinacas", "Cebolla morada", "Aguacate", "Mayonesa vegana"],
-        "precio": 8,
-        "chef": "ChefB"
+      nombre: "ChefB",
+      especialidad: "Cocina Vegetariana"
     },
     {
-        "nombre": "Doble Carne",
-        "categoria": "Gourmet",
-        "ingredientes": ["Pan de sésamo", "Doble carne de res", "Queso cheddar", "Bacon", "Lechuga", "Cebolla caramelizada", "Salsa BBQ"],
-        "precio": 12,
-        "chef": "ChefC"
+      nombre: "ChefC",
+      especialidad: "Gourmet"
     }
-]
-
-let JSONChefs
-[
+  ];
+  
+  let hamburguesas = [
     {
-        "nombre": "ChefA",
-        "especialidad": "Carnes"
+      nombre: "Clásica",
+      categoria: "Clásica",
+      ingredientes: ["Pan", "Carne de res", "Queso cheddar"],
+      precio: 10,
+      chef: "ChefA"
     },
     {
-        "nombre": "ChefB",
-        "especialidad": "Cocina Vegetariana"
+      nombre: "Vegetariana",
+      categoria: "Vegetariana",
+      ingredientes: ["Pan", "Queso cheddar", "Lechuga"],
+      precio: 8,
+      chef: "ChefB"
     },
     {
-        "nombre": "ChefC",
-        "especialidad": "Gourmet"
+      nombre: "Doble Carne",
+      categoria: "Gourmet",
+      ingredientes: ["Pan", "Carne de res", "Queso cheddar", "Carne de res"],
+      precio: 12,
+      chef: "ChefC"
     }
-]
+  ];
 
-function Añadir() {
-    let = ingredientes(prompt("Ingresa el ingrediente que quieras utilizar"));
-    if (ingredientes) 
-    alert("Ingredientes invalidos.")
-return; 
- }
-
- let categoria = prompt("Ingresa la categoria (Ingredientes, Categorias, Hamburguesas, Chefs:")
- let confirmacion = prompt("Ingrese 'S' para guardar o 'C' para cancelar.")
-
-if (confirmacion === "S"){
-
-}
-
-
-// Desarrollado por Julian David Acevedo Gómez T.I: 1.097.100.290
+  
+  
