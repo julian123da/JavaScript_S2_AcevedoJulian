@@ -35,13 +35,12 @@ Ingrese el número de la opción:
       break;
     case "5":
       continuar = false;
-      alert(" Gracias por usar el simulador.");
+      alert("Gracias por usar el simulador.");
       break;
     default:
-      alert("⚠️ Opción inválida. Intente de nuevo.");
+      alert(" Opción inválida. Intente de nuevo.");
   }
 }
-
 
 function registrarGasto() {
   let monto = parseFloat(prompt("Ingrese el monto del gasto:"));
@@ -59,12 +58,12 @@ function registrarGasto() {
       fecha: new Date().toLocaleDateString(),
       monto: monto,
       categoria: categoria,
-      descripcion: descripcion
+      descripcion: descripcion || "Sin descripción"
     };
     gastos.push(nuevoGasto);
-    alert(" Gasto guardado correctamente.");
+    alert("Gasto guardado correctamente.");
   } else {
-    alert("Gasto no guardado.");
+    alert(" Gasto no guardado.");
   }
 }
 
@@ -74,9 +73,9 @@ function listarGastos() {
     return;
   }
 
-  let lista = "Lista de Gastos:\n\n";
+  let lista = " Lista de Gastos:\n\n";
   gastos.forEach((gasto, index) => {
-    lista += `${index + 1}. [${gasto.fecha}] $${gasto.monto} - ${gasto.categoria} (${gasto.descripcion})\n`;
+    lista += `${index + 1}. [${gasto.fecha}] $${gasto.monto.toFixed(2)} - ${gasto.categoria} (${gasto.descripcion})\n`;
   });
 
   alert(lista);
@@ -89,7 +88,7 @@ function calcularTotal() {
   }
 
   let total = gastos.reduce((suma, gasto) => suma + gasto.monto, 0);
-  alert(` Total de gastos: $${total.toFixed(2)}`);
+  alert(`💰 Total de gastos: $${total.toFixed(2)}`);
 }
 
 function generarReporte() {
@@ -104,13 +103,13 @@ function generarReporte() {
   gastos.forEach(gasto => {
     total += gasto.monto;
     if (resumen[gasto.categoria]) {
-      resumen[gasto.categoria] = gasto.monto;
+      resumen[gasto.categoria] += gasto.monto; 
     } else {
-      resumen[gasto.categoria] += gasto.monto;
+      resumen[gasto.categoria] = gasto.monto;
     }
   });
 
-  let reporte = ` Reporte de Gastos\n\nTotal: $${total.toFixed(2)}\n`;
+  let reporte = ` Reporte de Gastos\n\nTotal: $${total.toFixed(2)}\n\n`;
   for (let categoria in resumen) {
     reporte += `- ${categoria}: $${resumen[categoria].toFixed(2)}\n`;
   }
@@ -118,5 +117,5 @@ function generarReporte() {
   alert(reporte);
 }
 
-
 // Desarrollado por Julian David Acevedo Gómez T.I: 1.097.100.290
+
