@@ -37,8 +37,6 @@ Ingrese el número de la opción:
       continuar = false;
       alert("Gracias por usar el simulador.");
       break;
-    default:
-      alert(" Opción inválida. Intente de nuevo.");
   }
 }
 
@@ -88,7 +86,7 @@ function calcularTotal() {
   }
 
   let total = gastos.reduce((suma, gasto) => suma + gasto.monto, 0);
-  alert(`💰 Total de gastos: $${total.toFixed(2)}`);
+  alert(` Total de gastos: $${total.toFixed(2)}`);
 }
 
 function generarReporte() {
