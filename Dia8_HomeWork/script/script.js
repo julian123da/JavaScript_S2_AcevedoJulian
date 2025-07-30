@@ -2,7 +2,7 @@
 // Modularizado y adaptado a SWAPI por ID
 
 function buscarPersonaje() {
-    const idUsar = prompt("Ingresa el ID del personaje a buscar (ej. 1 para Luke Skywalker):");
+    const idUsar = prompt("Ingresa el ID del personaje a buscar");
 
     const xhr = new XMLHttpRequest(); 
     const url = `https://swapi.py4e.com/api/people/${idUsar}/`; 
