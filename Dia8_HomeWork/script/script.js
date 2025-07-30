@@ -40,3 +40,41 @@ function buscarPersonaje() {
     xhr.send();
 }
 
+function obtenerPlaneta(url, callback) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const planeta = JSON.parse(xhr.responseText);
+            callback(planeta.name);
+        }
+    };
+    xhr.send();
+}
+
+function obtenerPelicula(url, callback) {
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const pelicula = JSON.parse(xhr.responseText);
+            callback(pelicula.title);
+        }
+    };
+    xhr.send();
+}
+
+function mostrarDatos(personaje, planeta, pelicula) {
+    alert(
+        "Nombre: " + personaje.name + "\n" +
+        "Altura: " + personaje.height + " cm\n" +
+        "Peso: " + personaje.mass + " kg\n" +
+        "Cabello: " + personaje.hair_color + "\n" +
+        "Piel: " + personaje.skin_color + "\n" +
+        "Género: " + personaje.gender + "\n" +
+        "Planeta natal: " + planeta + "\n" +
+        "Primera película: " + pelicula
+    );
+}
+
+buscarPersonaje();
