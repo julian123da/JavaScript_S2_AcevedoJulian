@@ -1,5 +1,5 @@
-// Consumo de API mediante XMLHttpRequest
-// Modularizado y adaptado a SWAPI por ID
+// Consumo de API mediante XMLHttpRequest.
+// Modularizado y adaptado a SWAPI por ID.
 
 function buscarPersonaje() {
     const idUsar = prompt("Ingresa el ID del personaje a buscar");
