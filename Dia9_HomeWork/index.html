@@ -3,30 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pokédex AJAX</title>
+  <title>Pokemon</title>
   <link rel="stylesheet" href="./styles/styles.css" />
 </head>
 <body>
 
   <div class="pokedex">
     <div class="screen">
-      <img src="https://img.freepik.com/vector-gratis/fondo-pixel-art-paisaje-otonal_23-2149597073.jpg?semt=ais_hybrid&w=740&q=80" id="background" alt="Bosque pixelado">
-      <img id="pokemonImage" src="" alt="Pokemon" class="pokemon">
+      <img id="pokemonImage">
+      <img src="./img/pokedex (1).png" alt="">
     </div>
     
-    <div class="info">
-      <p id="pokemonId">#000</p>
-      <h2 id="pokemonName">Pokémon</h2>
+
+    <div class="Name_or_Number">
+      <input type="text" id="searchInput" placeholder="Name or Number">
     </div>
 
-    <input type="text" id="searchInput" placeholder="Name or Number">
+    <div class="Pokemon">
+      <p>Pokemon</p>
+    </div>
 
-    <div class="buttons">
-      <button onclick="changePokemon(-1)">Prev &lt;</button>
+
+    <div class="Boton1">
+      <button onclick="changePokemon(-1)"> Prev &gt;</button>
+    </div>
+    
+    <div class="Boton2">
       <button onclick="changePokemon(1)">Next &gt;</button>
     </div>
-  </div>
+    </div>
 
   <script src="./script/script.js"></script>
 </body>
 </html>
+

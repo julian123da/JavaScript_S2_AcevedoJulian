@@ -23,5 +23,19 @@ function fetchPokemon(pokemon) {
   };
   xhr.send();
 }
+function changePokemon(change) {
+  currentPokemon += change;
+  if (currentPokemon < 1) currentPokemon = 1;
+  fetchPokemon(currentPokemon);
+}
 
-f
+input.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    fetchPokemon(input.value);
+    input.value = "";
+  }
+});
+
+window.onload = function () {
+  fetchPokemon(currentPokemon);
+};
