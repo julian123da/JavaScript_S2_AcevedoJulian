@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pokédex AJAX</title>
+  <link rel="stylesheet" href="./styles/styles.css" />
+</head>
+<body>
+
+  <div class="pokedex">
+    <div class="screen">
+      <img src="https://img.freepik.com/vector-gratis/fondo-pixel-art-paisaje-otonal_23-2149597073.jpg?semt=ais_hybrid&w=740&q=80" id="background" alt="Bosque pixelado">
+      <img id="pokemonImage" src="" alt="Pokemon" class="pokemon">
+    </div>
+    
+    <div class="info">
+      <p id="pokemonId">#000</p>
+      <h2 id="pokemonName">Pokémon</h2>
+    </div>
+
+    <input type="text" id="searchInput" placeholder="Name or Number">
+
+    <div class="buttons">
+      <button onclick="changePokemon(-1)">Prev &lt;</button>
+      <button onclick="changePokemon(1)">Next &gt;</button>
+    </div>
+  </div>
+
+  <script src="./script/script.js"></script>
+</body>
+</html>
