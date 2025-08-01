@@ -3,37 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pokemon</title>
+  <title>Pokédex Retro</title>
   <link rel="stylesheet" href="./styles/styles.css" />
 </head>
 <body>
-
   <div class="pokedex">
     <div class="screen">
-      <img id="pokemonImage">
-      <img src="./img/pokedex (1).png" alt="">
+      <img id="pokemonImage" src="" alt="pokemon" />
+      <span id="pokemonId">#000</span>
+      <span id="pokemonName">Pokemon</span>
     </div>
-    
 
     <div class="Name_or_Number">
-      <input type="text" id="searchInput" placeholder="Name or Number">
+      <input type="text" id="searchInput" placeholder="Name or Number" />
     </div>
 
-    <div class="Pokemon">
-      <p>Pokemon</p>
-    </div>
-
-
-    <div class="Boton1">
-      <button onclick="changePokemon(-1)"> Prev &gt;</button>
-    </div>
-    
-    <div class="Boton2">
+    <div class="botones">
+      <button onclick="changePokemon(-1)">Prev &lt;</button>
       <button onclick="changePokemon(1)">Next &gt;</button>
     </div>
-    </div>
+
+    <img class="pokedex-frame" src="./img/pokedex (1).png" alt="Pokedex frame" />
+  </div>
 
   <script src="./script/script.js"></script>
 </body>
 </html>
-
