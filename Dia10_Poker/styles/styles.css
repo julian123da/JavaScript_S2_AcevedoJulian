@@ -67,44 +67,95 @@ body html{
 
 #Rules {
     position: absolute;
-    top: 60%;
+    top: 59%;
     left: 49%;
     transform: translate(-50%, -50%);
     background-color: rgba(255, 255, 255, 0.75);
-    color: #333;
-    padding: 20px 30px;
-    border-radius: 15px;
-    width: 60%;
-    max-width: 490px;
+    padding: 20px;
+    max-width: 500px;
+    width: 90%;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     text-align: left;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    font-size: 1.2rem;
-    z-index: 10;
-    overflow: auto;
-    max-height: 50vh;
-}
+  }
+  
 .rules-list {
-    margin: 15px 0;
     padding-left: 20px;
-    width: 100%;
-}
+  }
+  
+.hidden {
+    display: none;
+  }
 
-#StartGame.start-button {
-    margin-top: 20px;
-    padding: 15px 40px;
-    font-size: 1.4rem;
-    border-radius: 12px;
-}
+  .start-button {
+    margin-top: 60px;
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #ff721b;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10vw;
+    height: 7vh;
+  }
+  
+  .start-button:hover {
+    background-color: #e6600a;
+  }
 
-.card{
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+  }
+  
+  .card-container img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+  }
+  
+  .card-container img:hover {
+    transform: scale(1.05);
+  }
+
+  #Game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+  }
+  
+  #CardContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 120px;
+  }
+  
+  #CardContainer img {
     width: 120px;
-    height: 180px;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-    background-size: cover;
-    background-position: center;
-}
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+  }
+  
+  #CardContainer img:hover {
+    transform: scale(1.1);
+  }
+  
 
 @keyframes fadeIn {
     from{
