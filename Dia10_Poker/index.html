@@ -1,14 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poker</title>
-    <link rel="stylesheet" href="./styles/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zodiac Poker</title>
+  <link rel="stylesheet" href="./styles/styles.css" />
 </head>
 <body>
-    <video src="./Media/videoplayback (1).mp4"></video>
-    
+
+  <img src="./imgs/signos.jpg" alt="Zodiac Background" class="Background-image" />
+
+  <div id="StartScreen" class="Container">
+    <h1 class="Title">Zodiac Poker</h1>
+    <button id="PlayButton" class="menu-button">Jugar</button>
+  </div>
+
+  <div id="Rules" class="hidden">
+    <h2>¿Cómo jugar?</h2>
+    <p>Este juego es una versión temática de póker con signos zodiacales.</p>
+    <p>Cada carta representa un signo zodiacal:</p>
+    <ul class="rules-list">
+      <li>As = Aries</li>
+      <li>2 = Tauro</li>
+      <li>3 = Géminis</li>
+      <li>4 = Cáncer</li>
+      <li>5 = Leo</li>
+      <li>6 = Virgo</li>
+      <li>7 = Libra</li>
+      <li>8 = Escorpio</li>
+      <li>9 = Sagitario</li>
+      <li>10 = Capricornio</li>
+      <li>J = Acuario</li>
+      <li>Q = Piscis</li>
+      <li>K = Ofiuco (comodín especial)</li>
+    </ul>
+
+    <p>Reglas adicionales:</p>
+    <ul class="rules-list">
+      <li>Ofiuco puede sustituir cualquier otro signo para formar combinaciones.</li>
+      <li>Tu objetivo es conseguir combinaciones astrológicas poderosas como triadas de fuego, tierra, aire o agua.</li>
+      <li>Se reparten 5 cartas al azar en cada ronda.</li>
+      <li>Puedes hacer clic en "Nueva Ronda" para volver a recibir cartas.</li>
+      <li>Las combinaciones más fuertes ganan la partida.</li>
+      <li>La suerte y el destino de tu signo influirán en tus cartas.</li>
+    </ul>
+
+    <button id="StartGame" class="start-button">Comenzar partida</button>
+  </div>
+
+  <div id="Game" class="hidden">
+  </div>
+
+  <script src="./script/script.js"></script>
 </body>
-<script src="./script/script.js"></script>
 </html>
