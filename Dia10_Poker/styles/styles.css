@@ -38,6 +38,8 @@ body html{
     margin-bottom: 40px;
     color: #FFD700;
     text-shadow: 4px 4px 10px #000;
+    margin-top: -900px;
+    margin-left: 650px;
 }
 
 .menu-button, .start-button{
@@ -50,7 +52,8 @@ body html{
     cursor: pointer;
     box-shadow: 0 6px 25px rgb(0, 0, 0, 0.6);
     transition: all 0.4s ease;
-    margin-top: 30px;
+    margin-top: 60px;
+    margin-left: 800px;
 }
 
 .menu-button:hover, .start-button:hover{
@@ -62,41 +65,35 @@ body html{
     display: none;
 }
 
-#Rules{
-    background-color: rgb(255, 255, 255, 0.65);
-    color: #333;
-    padding: 60px 50px;
-    border-radius: 25px;
-    width: 90%;
-    max-width: 750px;
-    height: 40vh;
-    text-align: left;
-    box-shadow: 0 10px 30px rgb(0, 0, 0, 0.3);
-    animation: dadeIn 0.8s ease forwards;
-    font-size: 1.7rem;
-    overflow: auto;
-    z-index: 10;
-    margin-top: -800px;
-    margin-left: -450px;
+#Rules {
     position: absolute;
-    margin-top: 50%;
-    margin-left: 50%;
+    top: 60%;
+    left: 49%;
     transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #333;
+    padding: 20px 30px;
+    border-radius: 15px;
+    width: 60%;
+    max-width: 490px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    font-size: 1.2rem;
+    z-index: 10;
+    overflow: auto;
+    max-height: 50vh;
 }
-
-.rules-list{
-    margin-top: 10px;
-    margin-bottom: 20px;
+.rules-list {
+    margin: 15px 0;
     padding-left: 20px;
+    width: 100%;
 }
 
-#CardContainer{
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
+#StartGame.start-button {
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 1.4rem;
+    border-radius: 12px;
 }
 
 .card{
