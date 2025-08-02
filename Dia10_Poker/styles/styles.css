@@ -1,17 +1,17 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body html{
+  }
+  
+  html, body {
     height: 100%;
     font-family: Arial, sans-serif;
-    overflow: hidden;
+    overflow: auto;
     position: relative;
-}
-
-.background-imnage{
+  }
+  
+  .background-imnage {
     position: absolute;
     margin-top: 0;
     margin-left: 0;
@@ -20,10 +20,10 @@ body html{
     object-fit: cover;
     z-index: -1;
     filter: brightness(0.4);
-}
-
-.container{
-    height: 100%;
+  }
+  
+  .container {
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,18 +31,19 @@ body html{
     text-align: center;
     color: white;
     animation: fadeIn 1s ease forwards;
-}
-
-.Title{
+    padding: 20px;
+  }
+  
+  .Title {
     font-size: 6.2rem;
     margin-bottom: 40px;
     color: #FFD700;
     text-shadow: 4px 4px 10px #000;
     margin-top: -900px;
     margin-left: 650px;
-}
-
-.menu-button, .start-button{
+  }
+  
+  .menu-button, .start-button {
     padding: 30px 90px;
     font-size: 2.8rem;
     border: none;
@@ -54,41 +55,41 @@ body html{
     transition: all 0.4s ease;
     margin-top: 60px;
     margin-left: 800px;
-}
-
-.menu-button:hover, .start-button:hover{
+  }
+  
+  .menu-button:hover, .start-button:hover {
     background-color: #ffc100;
     transform: scale(1.05);
-}
-
-.hidden{
+  }
+  
+  .hidden {
     display: none;
-}
-
-#Rules {
+  }
+  
+  #Rules {
     position: absolute;
-    top: 59%;
-    left: 49%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(255, 255, 255, 0.75);
-    padding: 20px;
-    max-width: 500px;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 24px;
+    max-width: 420px;
     width: 90%;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-height: 55vh;
+    overflow-y: auto;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     text-align: left;
+    z-index: 10;
+  }
+  .rules-list {
+    padding-left: 18px;
+    font-size: 16px;
+    color: #000;
   }
   
-.rules-list {
-    padding-left: 20px;
-  }
-  
-.hidden {
-    display: none;
-  }
-
   .start-button {
-    margin-top: 60px;
+    margin-top: 0px;
     padding: 12px 20px;
     font-size: 16px;
     background-color: #ff721b;
@@ -100,33 +101,34 @@ body html{
     margin-left: auto;
     margin-right: auto;
     width: 10vw;
-    height: 7vh;
+    height: 3vh;
   }
   
   .start-button:hover {
     background-color: #e6600a;
   }
-
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    padding: 20px;
-  }
   
+  .card {
+    width: 100px;
+    height: 140px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+  }
+
   .card-container img {
     width: 100px;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease;
+    
   }
   
   .card-container img:hover {
     transform: scale(1.05);
   }
-
+  
   #Game {
     position: absolute;
     top: 50%;
@@ -156,12 +158,13 @@ body html{
     transform: scale(1.1);
   }
   
-
-@keyframes fadeIn {
-    from{
-        opacity: 0;
-        transform: scale(0.95);
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
     }
-    to{opacity: 1;
-    transform: scale(1);}
-}
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
