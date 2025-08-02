@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     startGameButton.addEventListener("click", () => {
       rules.classList.add("hidden");
       game.classList.remove("hidden");
-      startGame(); // 👈 IMPORTANTE: Llamamos la función que inicia el juego
+      startGame(); 
     });
   
     function startGame() {
