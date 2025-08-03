@@ -58,4 +58,5 @@ document.addEventListener("DOMContentLoaded", () => {
   
     const description = zodiacMap[value] || "Signo no definido";
     alert(description);
+    
   }
