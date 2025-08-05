@@ -24,3 +24,19 @@ document.addEventListener('keydown',function (e){
     /*document.getElementById('textoXD').innerHTML+=`<p>Presionaste: ${e.key}</p>`;*/
     console.log(`Presionaste: ${e.key}`);
 });
+
+//Eventos en los formularios 
+const formulario = document.getElementById('formulario');
+formulario.addEventListener('submit',(e)=>{
+    e.preventDefault();//Enviar que haya una recarga de pagina
+    const nombre = document.getElementById('nombre').ariaValueMax;
+    alert('Hola ${nombre} !!!');
+});
+
+//Inputs y Eventos de entrada
+const InputGeneral = document.getElementById('inputTexto');
+const resultado = document.getElementById('resultado');
+
+InputGeneral.addEventListener('input',function(){
+    resultado.textContent = InputGeneral.ariaValue;
+});
