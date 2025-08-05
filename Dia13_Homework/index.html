@@ -7,7 +7,27 @@
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
-    
+
+    <h1 class="Title"> Encuentra a tu SuperHero</h1>
+    <img src="https://www.superheroapi.com/api.php/7f07b2080b6fcedb6525374cc69a13a2/1" alt="">
+    <div class="SuperHero">
+    <div class="screen">
+      <img id="SuperHeroImg" src="" alt="SuperHero"/>
+      <span id="SuperHeroID"></span>
+      <span id="SuperHeroName">SuperHero</span>
+    </div>
+
+    <div class="Name">
+      <input type="text" id="searchName" placeholder="Name"/>
+    </div>
+
+    <div class="botones">
+      <button onclick="changeSuperHero(-1)"></button>
+
+    </div>
+
+    <img class="SuperHero" src="" alt="SuperHero"/>
+  </div>
 </body>
 <script src="./script/script.js"></script>
 </html>
