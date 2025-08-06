@@ -1,33 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperHero</title>
-    <link rel="stylesheet" href="./styles/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/styles.css">
 </head>
 <body>
 
-    <h1 class="Title"> Encuentra a tu SuperHero</h1>
-    <img src="https://www.superheroapi.com/api.php/7f07b2080b6fcedb6525374cc69a13a2/1" alt="">
-    <div class="SuperHero">
-    <div class="screen">
-      <img id="SuperHeroImg" src="" alt="SuperHero"/>
-      <span id="SuperHeroID"></span>
-      <span id="SuperHeroName">SuperHero</span>
+  <div class="container py-5">
+    <h1 class="text-center mb-4">Escoge tu SuperHero</h1>
+
+    <input type="number" id="heroId" class="form-control mb-3" placeholder="Enter Hero ID (1-731)" min="1" max="731">
+
+
+    <div class="d-flex flex-wrap gap-2 mb-4">
+      <button class="btn btn-primary" onclick="getHeroInfo()">Info</button>
+      <button class="btn btn-success" onclick="getPowerStarts()">Power</button>
+      <button class="btn btn-warning text-dark" onclick="getBiography">Biography</button>
+      <button class="btn btn-info text-dark" onclick="getApperence">Apperence</button>
+      <button class="btn btn-condary" onclick="getWork">Work</button>
+      <button class="btn btn-danger" onclick="getConnections">Connections</button>
     </div>
 
-    <div class="Name">
-      <input type="text" id="searchName" placeholder="Name"/>
-    </div>
+    <div id="result" class="p-3 bg-light text-dark rounded shadown-sm"></div>
 
-    <div class="botones">
-      <button onclick="changeSuperHero(-1)"></button>
-
-    </div>
-
-    <img class="SuperHero" src="" alt="SuperHero"/>
-  </div>
+     
 </body>
 <script src="./script/script.js"></script>
 </html>
