@@ -1,14 +1,8 @@
-const BASE_URL = "https://www.superheroapi.com/api.php/7f07b2080b6fcedb6525374cc69a13a2/";
+const BASE_URL = "https://www.superheroapi.com/api.php/7f07b2080b6fcedb6525374cc69a13a2/search/";
 
 function getHeroId() {
   const id = document.getElementById("heroId").value;
-  if (!id || id < 1 || id > 731) {
-    alert("Introduzca un ID válido entre 1 y 731.");
-    return null;
-  }
-  return id;
 }
-
 function renderList(title, dataObj) {
   let html = `<h3>${title}</h3><ul class="list-group">`;
   for (const key in dataObj) {
@@ -20,7 +14,6 @@ function renderList(title, dataObj) {
 
 function getHeroInfo() {
   const id = getHeroId();
-  if (!id) return;
   fetch(`${BASE_URL}${id}`)
     .then(res => res.json())
     .then(data => {
@@ -33,7 +26,7 @@ function getHeroInfo() {
       document.getElementById("result").innerHTML = html;
     });
 }
-
+/*
 function getPowerStats() {
   const id = getHeroId();
   if (!id) return;
@@ -72,4 +65,4 @@ function getConnections() {
   fetch(`${BASE_URL}${id}/connections`)
     .then(res => res.json())
     .then(data => renderList("Connections", data));
-}
+}*/
