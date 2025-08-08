@@ -1,4 +1,9 @@
-const BASE_URL = "https://www.superheroapi.com/api.php/7f07b2080b6fcedb6525374cc69a13a2/search/";
+function informacionP() {
+  document.getElementById("resultados").innerHTML = ``;
+
+  const nombrep = document.getElementById("nombreInput").value;
+  console.log(nombreP)
+}
 
 function getHeroId() {
   const id = document.getElementById("heroId").value;
