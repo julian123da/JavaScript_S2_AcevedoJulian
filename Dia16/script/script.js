@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             body:JSON.stringify({
                 task,status:'On hold'
             })
-        })
+        });
         taskInput.value='';
         const data = await fetchData();
         displayCapsula(data);
