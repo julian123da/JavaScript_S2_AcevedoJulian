@@ -1,73 +1,37 @@
 function informacionP() {
   document.getElementById("resultados").innerHTML = ``;
 
-  const nombrep = document.getElementById("nombreInput").value;
-  console.log(nombreP)
-}
+  const nombreP = document.getElementById("nombreInput").value;
+  console.log(nombreP);
+  const xhr = new XMLHttpRequest();
+  const url = `https://superheroapi.com/api.php/ca4c752a3aac881d5bb269f1aa297311/search/${nombreP}`;
+  console.log(url);
+  xhr.open(`GET`, url);
 
-function getHeroId() {
-  const id = document.getElementById("heroId").value;
-}
-function renderList(title, dataObj) {
-  let html = `<h3>${title}</h3><ul class="list-group">`;
-  for (const key in dataObj) {
-    html += `<li class="list-group-item"><strong>${key}:</strong> ${dataObj[key]}</li>`;
-  }
-  html += `</ul>`;
-  document.getElementById("result").innerHTML = html;
-}
+  xhr.onreadystatechange = function () {
 
-function getHeroInfo() {
-  const id = getHeroId();
-  fetch(`${BASE_URL}${id}`)
-    .then(res => res.json())
-    .then(data => {
-      const html = `
-        <h3>${data.name}</h3>
-        <img src="${data.image.url}" alt="${data.name}">
-        <p><strong>Full Name:</strong> ${data.biography["full-name"]}</p>
-        <p><strong>Publisher:</strong> ${data.biography.publisher}</p>
-      `;
-      document.getElementById("result").innerHTML = html;
-    });
-}
-/*
-function getPowerStats() {
-  const id = getHeroId();
-  if (!id) return;
-  fetch(`${BASE_URL}${id}/powerstats`)
-    .then(res => res.json())
-    .then(data => renderList("Powerstats", data));
-}
+      if (xhr.readyState === 4 && xhr.status === 200) {
+          try {
+              let datos = JSON.parse(xhr.responseText);
+              console.log(datos)
+              if (datos.results && datos.results.length > 0); {
+                  for (let i = 0; 1 < datos.results.length; i++) {
+                      let division = document.getElementById("resultados");
+                      division.innerHTML = `
+                      <div class = "heroues">
+                      <img src="${datos["results"][i]["image"]["url"]}">
+                      <h3>${datos["results"][i]["name"]}</h3>
+                      <p><strong>ID:</strong>${datos["results"][i]["id"]}</p>
+                      </div>`
+                      console.log(datos);
+                  };
+          }
+          }
+          catch (error) {
+              console.log("error");
+          }
+      }
+  };
+  xhr.send();
 
-function getBiography() {
-  const id = getHeroId();
-  if (!id) return;
-  fetch(`${BASE_URL}${id}/biography`)
-    .then(res => res.json())
-    .then(data => renderList("Biography", data));
 }
-
-function getAppearance() {
-  const id = getHeroId();
-  if (!id) return;
-  fetch(`${BASE_URL}${id}/appearance`)
-    .then(res => res.json())
-    .then(data => renderList("Appearance", data));
-}
-
-function getWork() {
-  const id = getHeroId();
-  if (!id) return;
-  fetch(`${BASE_URL}${id}/work`)
-    .then(res => res.json())
-    .then(data => renderList("Work", data));
-}
-
-function getConnections() {
-  const id = getHeroId();
-  if (!id) return;
-  fetch(`${BASE_URL}${id}/connections`)
-    .then(res => res.json())
-    .then(data => renderList("Connections", data));
-}*/

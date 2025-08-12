@@ -1,37 +1,42 @@
-function informacionP() {
-    document.getElementById("resultados").innerHTML = ``;
+document.getElementById('btnColor').addEventListener('click',()=>{
+    console.log("Wenassssssss");
+    const cuadro = document.getElementById('cuadro');
+    cuadro.classList.toggle('cambio');
+    /*document.getElementById('cuadro').innerHTML+=`<h1>Wenas</h1>`;*/
+});
 
-    const nombreP = document.getElementById("nombreInput").value;
-    console.log(nombreP);
-    const xhr = new XMLHttpRequest();
-    const url = `https://superheroapi.com/api.php/ca4c752a3aac881d5bb269f1aa297311/search/${nombreP}`;
-    console.log(url);
-    xhr.open(`GET`, url);
+//Elementos generales
+cuadro.addEventListener('click',()=>{
+    alert('Le diste click al cuadro!');
+});
 
-    xhr.onreadystatechange = function () {
+//mouseover y mouseout
+//hover (cuando esta encima de // cuando sale de ...)
+cuadro.addEventListener('mouseover',()=>{
+    cuadro.style.border='3px solid black';
+});
+cuadro.addEventListener('mouseout',()=>{
+    cuadro.style.border='none';
+});
 
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            try {
-                let datos = JSON.parse(xhr.responseText);
-                console.log(datos)
-                if (datos.results && datos.results.length > 0); {
-                    for (let i = 0; 1 < datos.results.length; i++) {
-                        let division = document.getElementById("resultados");
-                        division.innerHTML = `
-                        <div class = "heroues">
-                        <img src="${datos["results"][i]["image"]["url"]}">
-                        <h3>${datos["results"][i]["name"]}</h3>
-                        <p><strong>ID:</strong>${datos["results"][i]["id"]}</p>
-                        </div>`
-                        console.log(datos);
-                    };
-            }
-            }
-            catch (error) {
-                console.log("error");
-            }
-        }
-    };
-    xhr.send();
+//Jugando con teclas
+document.addEventListener('keydown',function (e){
+    /*document.getElementById('textoXD').innerHTML+=`<p>Presionaste: ${e.key}</p>`;*/
+    console.log(`Presionaste: ${e.key}`);
+});
 
-}
+//Eventos en los formularios 
+const formulario = document.getElementById('formulario');
+formulario.addEventListener('submit',(e)=>{
+    e.preventDefault();//Enviar que haya una recarga de pagina
+    const nombre = document.getElementById('nombre').ariaValueMax;
+    alert('Hola ${nombre} !!!');
+});
+
+//Inputs y Eventos de entrada
+const InputGeneral = document.getElementById('inputTexto');
+const resultado = document.getElementById('resultado');
+
+InputGeneral.addEventListener('input',function(){
+    resultado.textContent = InputGeneral.ariaValue;
+});

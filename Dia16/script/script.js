@@ -8,6 +8,30 @@ document.addEventListener('DOMContentLoaded',()=>{
         let data = await res.json();
         return data;
     }
+
+    //################
+    //DANGER ZONE
+
+    //################
+    async function addNewTask(){
+        const task = taskINput.value;
+        console.log(task);
+        if (task.trim()==='') return;
+        await fetch('https://689a16b7fed141b96ba1d20f.mockapi.io/data/Users',{
+            method: 'POST',
+            headers :{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify({
+                task,status:'On hold'
+            })
+        })
+        taskInput.value='';
+        const data = await fetchData();
+        displayCapsula(data);
+    }
+
+
    //console.log(fetchData());
    function displayCapsula(capsula){
     datosContenedor.innerHTML='';
@@ -49,5 +73,6 @@ document.addEventListener('DOMContentLoaded',()=>{
 }
 fetchData().then(data =>{
     displayCapsula(data);
-})
+});
+addTaskButton.addEventListener('click',addNewTask());
 });
